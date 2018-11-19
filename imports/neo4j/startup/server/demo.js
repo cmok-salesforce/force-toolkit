@@ -43,7 +43,7 @@ conn.login(sfdc.username, sfdc.password, function(err, userInfo) {
     //console.log("Org ID: " + userInfo.organizationId);
     //profile2(conn, err, userInfo);
     profile3(conn);
-    conn.query("SELECT Id, Name FROM Account limit 5", function(err, result) {
+    conn.query("SELECT Id, Name FROM Account", function(err, result) {
         if (err) { return console.error("*** conn" + err); }
         console.log("result : " + result);
         console.log("total : " + result.totalSize);

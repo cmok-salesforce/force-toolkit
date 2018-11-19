@@ -1,11 +1,11 @@
 var fs = require('fs');
 
-//https://stackoverflow.com/questions/22921242/remove-carriage-return-and-space-from-a-string
-    
+//https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
 (function () {
 
     console.log("*** HOME=" + process.env.HOME);
     const path= process.env.HOME + "/MEGA/code/force-toolkit/imports/playground/soql/ootb/apexclass.soql";
+    //https://stackoverflow.com/questions/22921242/remove-carriage-return-and-space-from-a-string
     var soql = fs.readFileSync(path, "utf8").replace(/[\n\r]+/g, '').replace(/\t/g, ' ');
     console.log('soql=' + soql);
 
@@ -46,7 +46,7 @@ var fs = require('fs');
             if (err) {
                 return console.error(err);
             }
-            //console.log(res);
+            console.log(res);
         });
         console.log('conn.accessToken=' + conn.accessToken);
         console.log('conn.instanceUrl=' + conn.instanceUrl);

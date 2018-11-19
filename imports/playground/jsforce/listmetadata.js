@@ -10,8 +10,11 @@ program
 
 var username = myutils.properties.get(`sf.${program.env}.username`);
 var password = myutils.properties.get(`sf.${program.env}.password`);
-var loginEndpoint = 'https://test.salesforce.com';
+var loginEndpoint = myutils.properties.get(`sf.${program.env}.serverUrl`);
 var useoauth = false;
+console.log('*** username=' + username);
+console.log('*** password=' + password);
+console.log('*** loginEndpoint=' + loginEndpoint);
 var oauthparams = {
     loginUrl: loginEndpoint,
     clientId: myutils.properties.get(`sf.${program.env}.${program.connectedApp}.consumer_id`),
@@ -33,7 +36,7 @@ if (useoauth) {
 }
 else {
     conn = new jsforce.Connection({
-        loginUrl: 'https://test.salesforce.com'
+        loginUrl: loginEndpoint
     });
 }
 var ProgressBar = require('progress');

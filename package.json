@@ -1,6 +1,14 @@
 {
   "name": "force-toolkit",
   "private": true,
+  "keywords": [
+    "Curi",
+    "link",
+    "breacrumbs",
+    "addon"
+  ],
+  "author": "Chenda Mok",
+  "license": "MIT",
   "scripts": {
     "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
